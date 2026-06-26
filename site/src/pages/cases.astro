@@ -1,0 +1,245 @@
+---
+import "../styles/global.css";
+
+const pageTitle = "Secure Cases | 21 production security review invariants";
+const description =
+  "The Secure case library documents 21 production security invariants used for whole-project audits, semantic confirmation, benchmark evaluation, fixes, tests, and rescan workflows.";
+const canonicalUrl = "https://secure-skill.dev/cases/";
+
+const cases = [
+  {
+    id: "01",
+    name: "Authentication Trust",
+    signal: "Client-provided identity, demo headers, optional sessions, weak middleware order.",
+    check: "Confirm that the server owns identity and role claims before any sensitive handler runs.",
+    proof: "Tests reject forged headers, missing sessions, and downgraded middleware paths."
+  },
+  {
+    id: "02",
+    name: "Authorization Dominance",
+    signal: "Guards exist, but they run after reads, writes, exports, queue jobs, or provider calls.",
+    check: "Trace the request until the sensitive sink and verify the guard dominates the sink.",
+    proof: "Tests fail when a user reaches the sink without the required role or permission."
+  },
+  {
+    id: "03",
+    name: "Tenant Boundary",
+    signal: "tenantId is accepted from payloads, params, headers, cookies, or untrusted claims.",
+    check: "Verify tenant scope comes from trusted server context and is applied to every object query.",
+    proof: "Cross-tenant read, update, delete, export, and job tests return denied results."
+  },
+  {
+    id: "04",
+    name: "Owner Scope",
+    signal: "Object lookup uses only id, slug, file key, token, or public-looking route names.",
+    check: "Verify the object belongs to the authenticated actor or an authorized shared scope.",
+    proof: "Another user's object id cannot be read, changed, deleted, previewed, or exported."
+  },
+  {
+    id: "05",
+    name: "Mass Assignment",
+    signal: "Payloads flow directly into ORM create, update, merge, mapper, DTO, or model calls.",
+    check: "Allowlist mutable fields and block policy fields such as role, status, plan, price, quota, ownerId, and tenantId.",
+    proof: "Tests prove restricted fields are ignored or rejected across create and update paths."
+  },
+  {
+    id: "06",
+    name: "State Transition Invariants",
+    signal: "Status changes, approvals, refunds, cancellations, publishes, and deletes lack transition rules.",
+    check: "Verify each state change has actor, current state, next state, and business rule validation.",
+    proof: "Invalid transitions and repeated side effects are rejected."
+  },
+  {
+    id: "07",
+    name: "Route Exposure",
+    signal: "Preview, helper, asset, public, test, admin, debug, import, export, or internal routes are reachable.",
+    check: "Treat route names as unreliable and confirm exposure by framework routing rules.",
+    proof: "Public routes are intentionally public, protected routes deny anonymous access."
+  },
+  {
+    id: "08",
+    name: "Side Effect Reachability",
+    signal: "A read-looking path sends email, enqueues jobs, charges money, creates records, or calls AI providers.",
+    check: "Classify by side effect, not HTTP verb or file name.",
+    proof: "Unauthenticated and low-privilege users cannot trigger costly or mutating work."
+  },
+  {
+    id: "09",
+    name: "Fail-open Behavior",
+    signal: "Redis, cache, provider, queue, feature flag, or rate-limit failure allows privileged actions.",
+    check: "Decide which failures must deny, degrade, or retry, then enforce that branch explicitly.",
+    proof: "Dependency failure tests confirm protected actions fail closed where required."
+  },
+  {
+    id: "10",
+    name: "Visibility Rules",
+    signal: "Draft, private, archived, deleted, embargoed, paid, or scoped content shares generic read paths.",
+    check: "Verify visibility predicates are attached to every list, detail, export, search, and preview query.",
+    proof: "Private and draft objects do not leak through alternate query paths."
+  },
+  {
+    id: "11",
+    name: "Secrets and Unsafe Examples",
+    signal: "Real keys appear in local config, examples, docs, tests, deployment files, or generated output.",
+    check: "Separate placeholders from live values and remove tracked secrets before commit.",
+    proof: "Secret scans and manual review show only safe placeholders remain."
+  },
+  {
+    id: "12",
+    name: "CORS and CSRF",
+    signal: "Broad origins, credentialed CORS, cookie auth, form posts, server actions, or mutating browser endpoints.",
+    check: "Verify origin policy, same-site behavior, CSRF tokens, and method constraints match the auth model.",
+    proof: "Cross-site mutation attempts fail while intended clients still work."
+  },
+  {
+    id: "13",
+    name: "Rate Limits and Abuse Cost",
+    signal: "Public forms, login, password reset, quote builders, file conversion, AI calls, PDF rendering, and email sends.",
+    check: "Rate-limit by actor, IP, route, tenant, and cost unit where needed.",
+    proof: "Burst tests hit limits and provider spend cannot be amplified anonymously."
+  },
+  {
+    id: "14",
+    name: "Malformed Input",
+    signal: "JSON, multipart, CSV, PDF, XML, markdown, URLs, emails, phone numbers, dates, and nested objects enter business logic.",
+    check: "Validate shape, size, type, encoding, ranges, nesting depth, and canonical form before use.",
+    proof: "Invalid payload tests fail predictably without crashes or partial writes."
+  },
+  {
+    id: "15",
+    name: "Logging and Error Leakage",
+    signal: "Stack traces, provider errors, tokens, user PII, SQL, file keys, or prompts are logged or returned.",
+    check: "Separate developer diagnostics from user-visible errors and redact sensitive fields.",
+    proof: "Error-path tests confirm safe responses and safe logs."
+  },
+  {
+    id: "16",
+    name: "Upload and Storage Boundaries",
+    signal: "User-controlled filenames, object keys, MIME types, previews, transformations, and delete paths.",
+    check: "Verify type checks, size limits, random object keys, tenant prefixes, malware controls, and private bucket defaults.",
+    proof: "Tests reject dangerous files and block cross-tenant storage access."
+  },
+  {
+    id: "17",
+    name: "Signed URL Scope",
+    signal: "Signed reads, writes, previews, downloads, and deletes use predictable keys or weak ownership checks.",
+    check: "Bind signed URL generation to actor, object, tenant, operation, expiration, and visibility.",
+    proof: "A valid URL cannot be reused for another object, tenant, or operation."
+  },
+  {
+    id: "18",
+    name: "AI, PDF, and Document Processing",
+    signal: "Prompt input, document upload, OCR, PDF rendering, templates, code execution, or external processors.",
+    check: "Bound file size, execution, network access, prompt injection impact, output trust, and provider cost.",
+    proof: "Malicious documents and prompts cannot exfiltrate secrets or trigger uncontrolled work."
+  },
+  {
+    id: "19",
+    name: "Payments and Finance",
+    signal: "Price, discount, currency, tax, refund, subscription, quota, balance, invoice, or webhook state.",
+    check: "Trust provider events and server-side price tables, not browser payloads.",
+    proof: "Client-side price tampering and replayed finance actions are rejected."
+  },
+  {
+    id: "20",
+    name: "Webhook Authenticity",
+    signal: "Third-party events update accounts, payments, usage, emails, CRM records, or order state.",
+    check: "Verify signatures, timestamps, replay protection, idempotency, event ownership, and state transition rules.",
+    proof: "Unsigned, stale, replayed, and cross-account webhook events fail."
+  },
+  {
+    id: "21",
+    name: "Naming Bias",
+    signal: "Names like public, helper, preview, demo, asset, safe, internal, lead, quote, temporary, or test reduce suspicion.",
+    check: "Ignore friendly names and review actual reachability, authority, object scope, and side effects.",
+    proof: "Findings are based on source-confirmed behavior, not on labels or filename intuition."
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#f05a28" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Secure review cases" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/assets/og-image.svg" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Secure review cases" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/assets/og-image.svg" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand-mark" href="/" aria-label="Secure home">
+        <span class="brand-glyph">SEC</span>
+        <span>Secure</span>
+      </a>
+      <nav class="nav-links" aria-label="Site sections">
+        <a href="/#workflow">Workflow</a>
+        <a href="/#flows">Flows</a>
+        <a href="/#benchmark">Benchmark</a>
+        <a href="/#methods">Methods</a>
+        <a href="/cases/">Cases</a>
+        <a href="/#coverage">Coverage</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="cases-hero" aria-labelledby="cases-title">
+        <div>
+          <p class="eyebrow">Secure case library</p>
+          <h1 id="cases-title">21 review invariants.</h1>
+        </div>
+        <p>
+          These are the patterns Secure uses to review whole projects across languages and frameworks.
+          Each case asks the same production question: can untrusted input or the wrong actor reach a sensitive sink?
+        </p>
+      </section>
+
+      <section class="case-map" aria-label="Review case index">
+        <div class="case-summary">
+          <span>Benchmark contract</span>
+          <strong>Detected, Partial, Missed, Out of scope.</strong>
+          <p>Every benchmark answer must account for all cases, include verification, name coverage, and close with a case coverage summary.</p>
+        </div>
+        {cases.map((item) => (
+          <article class="case-row">
+            <div class="case-number">{item.id}</div>
+            <div class="case-copy">
+              <h2>{item.name}</h2>
+              <dl>
+                <div>
+                  <dt>Signal</dt>
+                  <dd>{item.signal}</dd>
+                </div>
+                <div>
+                  <dt>Check</dt>
+                  <dd>{item.check}</dd>
+                </div>
+                <div>
+                  <dt>Proof</dt>
+                  <dd>{item.proof}</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Secure. Whole-project security review, hardening, verification, and coverage reporting.</p>
+      <a href="/">Back to home</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "secure-skill",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Production security review and hardening skill for Codex.",
+  "type": "module",
+  "scripts": {
+    "test": "npm --prefix benchmark test",
+    "build:site": "npm --prefix site run build",
+    "check:scripts": "python -m py_compile skill/scripts/project_scraper.py skill/scripts/inventory_scan.py",
+    "check": "npm run check:scripts && npm test && npm run build:site"
+  },
+  "keywords": [
+    "codex",
+    "security",
+    "secure-code-review",
+    "appsec",
+    "security-audit",
+    "ai-security",
+    "static-analysis",
+    "secure-by-design"
+  ],
+  "license": "MIT"
+}

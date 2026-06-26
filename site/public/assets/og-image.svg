@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Secure social image</title>
+  <desc id="desc">A bold product banner for the Secure skill.</desc>
+  <rect width="1200" height="630" fill="#f3e5c5"/>
+  <path d="M0 510H1200V630H0Z" fill="#f05a28"/>
+  <path d="M846 70H1120V344H846Z" fill="#9ff0a6" stroke="#251d15" stroke-width="5"/>
+  <path d="M888 128H1080M888 178H1038M888 228H1060M888 278H1012" stroke="#251d15" stroke-width="9"/>
+  <text x="72" y="128" font-family="Arial Narrow, Arial, sans-serif" font-size="34" font-weight="800" fill="#d9481e">WHOLE-PROJECT SECURITY REVIEW</text>
+  <text x="70" y="340" font-family="Arial Narrow, Arial, sans-serif" font-size="180" font-weight="800" fill="#251d15">Secure</text>
+  <text x="74" y="456" font-family="Consolas, monospace" font-size="30" font-weight="700" fill="#251d15">scan -> confirm -> patch -> verify -> rescan</text>
+  <text x="74" y="582" font-family="Consolas, monospace" font-size="30" font-weight="700" fill="#251d15">JS  PY  JAVA  .NET  GO  RUBY  PHP  RUST  SQL</text>
+</svg>

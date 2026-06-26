@@ -1,0 +1,27 @@
+name: Review case request
+description: Suggest a new security invariant, fixture case, or framework-specific check.
+title: "[case] "
+labels: ["case"]
+body:
+  - type: input
+    id: invariant
+    attributes:
+      label: Invariant
+      description: What rule should Secure verify?
+      placeholder: Example: signed download URL must be bound to actor, tenant, object, operation, and expiration.
+    validations:
+      required: true
+  - type: textarea
+    id: failure-mode
+    attributes:
+      label: Failure mode
+      description: What vulnerable code shape should this catch?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence shape
+      description: What source evidence should a reviewer need before reporting it?
+    validations:
+      required: false

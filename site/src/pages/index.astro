@@ -1,0 +1,464 @@
+﻿---
+import "../styles/global.css";
+
+const pageTitle = "Secure | Production security review and hardening skill";
+const description =
+  "Secure is a Codex skill for whole-project production security reviews, compact repo scraping, semantic risk confirmation, autonomous hardening, verification, and benchmark-grade coverage reporting.";
+const canonicalUrl = "https://secure-skill.dev/";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Secure",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Cross-platform",
+  description,
+  featureList: [
+    "Whole-project security review",
+    "Multi-language project scraping",
+    "Autonomous hardening workflow",
+    "Natural language flow detection",
+    "Authentication and authorization review",
+    "Tenant and owner boundary checks",
+    "Mass assignment detection",
+    "Signed URL and storage review",
+    "Verification and fix coverage reporting",
+    "Risk-ranked review algorithms",
+    "Security case library",
+    "Focused test and rescan workflow",
+    "Benchmark fixture output contract",
+  ],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD"
+  }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#f05a28" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preload" href="/assets/review-pack.svg" as="image" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Secure" />
+    <meta property="og:description" content="A production security review and hardening skill that scans whole projects, confirms real risks, fixes what it can, verifies, and reports coverage." />
+    <meta property="og:image" content="/assets/og-image.svg" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Secure" />
+    <meta name="twitter:description" content="Whole-project security review and hardening for JS, Python, Java, .NET, Go, Ruby, PHP, Rust, and SQL-heavy services." />
+    <meta name="twitter:image" content="/assets/og-image.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand-mark" href="#top" aria-label="Secure home">
+        <span class="brand-glyph">SEC</span>
+        <span>Secure</span>
+      </a>
+      <nav class="nav-links" aria-label="Site sections">
+        <a href="#workflow">Workflow</a>
+        <a href="#flows">Flows</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#methods">Methods</a>
+        <a href="/cases/">Cases</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#languages">Languages</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-art" role="img" aria-label="Security review pack interface with risk-ranked files and remediation coverage"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Whole-project security review skill</p>
+          <h1 id="hero-title">Secure</h1>
+          <p class="hero-lede">
+            A production security reviewer for Codex: scan the repo, confirm real exploit paths,
+            fix by invariant, verify the result, and report coverage in a format teams can trust.
+          </p>
+          <div class="hero-actions" aria-label="Primary calls to action">
+            <a class="button primary" href="#install">Install and use</a>
+            <a class="button secondary" href="#benchmark">See benchmark proof</a>
+          </div>
+        </div>
+        <aside class="command-strip" aria-label="Natural language examples">
+          <span>review this project</span>
+          <span>make it production ready</span>
+          <span>fix the security issues</span>
+        </aside>
+      </section>
+
+      <section class="proof-band" aria-label="Product promise">
+        <p>
+          Built for normal human requests. Users can say "review this project" or
+          "make it production ready"; Secure maps that to the right workflow.
+        </p>
+      </section>
+
+      <section id="benchmark" class="section benchmark-section" aria-labelledby="benchmark-title">
+        <div class="benchmark-copy">
+          <p class="eyebrow">Benchmark result</p>
+          <h2 id="benchmark-title">21/21 detected.</h2>
+          <p>
+            Secure was tuned against an intentionally vulnerable fixture with authentication bypass,
+            tenant leaks, route exposure, public side effects, signed URL abuse, AI/PDF cost paths,
+            payment tampering, webhook forgery, malformed input, and naming bias.
+          </p>
+        </div>
+        <div class="benchmark-board" aria-label="Secure benchmark output contract">
+          <div class="benchmark-score">
+            <span>Case coverage</span>
+            <strong>21/21</strong>
+            <p>Detected, 0 partial, 0 missed, 0 out of scope.</p>
+          </div>
+          <pre><code>Findings
+Critical: Authentication Trust. Evidence: src/security.mjs:4. Impact: forged admin sessions. Fix: signed sessions only.
+...
+
+Verification
+- npm test: passed 7/7.
+
+Coverage
+Reviewed scoped routes, auth, tenant scope, storage, AI/PDF, payments, webhooks, input, logs, naming bias.
+
+Case Coverage
+Summary: 21/21 Detected, 0 Partial, 0 Missed, 0 Out of scope.
+- Partial/Missed/Out of scope: None</code></pre>
+        </div>
+      </section>
+
+      <section id="workflow" class="section workflow-section" aria-labelledby="workflow-title">
+        <div class="section-heading">
+          <p class="eyebrow">Operational loop</p>
+          <h2 id="workflow-title">From full scan to verified fixes.</h2>
+        </div>
+        <ol class="workflow-list">
+          <li>
+            <span class="step-number">01</span>
+            <h3>Scrape compactly</h3>
+            <p>Read thousands of local files and emit a bounded review pack with routes, risky files, secrets, and capability clusters.</p>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <h3>Confirm from source</h3>
+            <p>Follow input to sink. A keyword hit is only a lead until the guard, object scope, and side effect are verified in code.</p>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <h3>Patch by invariant</h3>
+            <p>Fix the broken rule, not the local symptom: auth trust, tenant scope, mass assignment, signed URLs, rate limits, logs.</p>
+          </li>
+          <li>
+            <span class="step-number">04</span>
+            <h3>Verify and rescan</h3>
+            <p>Run tests, typechecks, focused searches, and the scraper again. Report confirmed coverage and remaining risk.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="flows" class="section flows-section" aria-labelledby="flows-title">
+        <div class="section-heading">
+          <p class="eyebrow">Intent router</p>
+          <h2 id="flows-title">Every user request maps to a concrete flow.</h2>
+          <p>
+            Secure does not wait for users to know command names. It reads intent from natural language,
+            chooses the right workflow, and reports what it did with evidence.
+          </p>
+        </div>
+
+        <div class="flow-stack">
+          <details open>
+            <summary>
+              <span class="flow-name">Review</span>
+              <span class="flow-trigger">"review this project", "check this repo", "before I commit"</span>
+              <span class="flow-action">View details</span>
+            </summary>
+            <div class="flow-body">
+              <p>
+                Read-only security review for a whole project, PR, diff, or specific path. Secure runs the compact
+                scraper, inspects high-risk source files, confirms issues from code, and returns findings first.
+              </p>
+              <ul>
+                <li><strong>Uses:</strong> pre-commit checks, code review, production risk triage.</li>
+                <li><strong>Output:</strong> Critical/High/Medium findings with file evidence, impact, fix guidance, verification limits.</li>
+                <li><strong>No edits:</strong> review mode reports issues but does not modify files.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="flow-name">Audit</span>
+              <span class="flow-trigger">"audit the app", "is this safe to deploy?", "production readiness"</span>
+              <span class="flow-action">View details</span>
+            </summary>
+            <div class="flow-body">
+              <p>
+                Broader production-readiness pass. It includes review findings, plus deployment-sensitive checks:
+                secrets, environment defaults, CORS, CSRF, logs, rate limits, external calls, webhooks, and fail-open behavior.
+              </p>
+              <ul>
+                <li><strong>Uses:</strong> release gates, deployment reviews, vendor or client handoff.</li>
+                <li><strong>Output:</strong> production blockers, operational risks, coverage, unreviewed areas, remediation order.</li>
+                <li><strong>Depth:</strong> more infrastructure-aware than standard review.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="flow-name">Scrape</span>
+              <span class="flow-trigger">"scan everything fast", "give me the map", large repos</span>
+              <span class="flow-action">View details</span>
+            </summary>
+            <div class="flow-body">
+              <p>
+                Token-efficient project scan. The local scraper reads many files, ranks risky surfaces, redacts likely
+                secrets, and emits a bounded review pack instead of dumping the repository into context.
+              </p>
+              <ul>
+                <li><strong>Uses:</strong> large monorepos, first-pass orientation, low-token security mapping.</li>
+                <li><strong>Output:</strong> top risky files, route/action entry points, possible secrets, capability index, review plan.</li>
+                <li><strong>Important:</strong> scraper leads are not findings until source code confirms them.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="flow-name">Secure</span>
+              <span class="flow-trigger">"fix the security issues", "make it production ready", "dejalo listo para subir"</span>
+              <span class="flow-action">View details</span>
+            </summary>
+            <div class="flow-body">
+              <p>
+                Full hardening loop. Secure scans, confirms real findings, patches by invariant, verifies, rescans,
+                and iterates until confirmed Critical and High issues are fixed or explicitly blocked.
+              </p>
+              <ul>
+                <li><strong>Uses:</strong> active remediation, final hardening, production preparation.</li>
+                <li><strong>Output:</strong> changed files, fixed findings, remaining findings, blockers, verification, fix coverage.</li>
+                <li><strong>Claim:</strong> never says "100% secure"; reports scoped coverage such as 8/8 confirmed Critical/High fixed.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="flow-name">Threat model</span>
+              <span class="flow-trigger">"before building this feature", "what can go wrong?"</span>
+              <span class="flow-action">View details</span>
+            </summary>
+            <div class="flow-body">
+              <p>
+                Design-time security planning. It maps actors, assets, trust boundaries, user-controlled inputs,
+                sensitive sinks, abuse cases, and controls before code is written.
+              </p>
+              <ul>
+                <li><strong>Uses:</strong> uploads, payments, AI workflows, admin tools, multi-tenant features.</li>
+                <li><strong>Output:</strong> threat map, required guards, validation rules, test targets, rollout risks.</li>
+                <li><strong>Result:</strong> fewer late-stage fixes because invariants are known up front.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="flow-name">Compare</span>
+              <span class="flow-trigger">"compare these reviews", "did this miss anything?", benchmark work</span>
+              <span class="flow-action">View details</span>
+            </summary>
+            <div class="flow-body">
+              <p>
+                Review-quality evaluation. Secure compares outputs, checks missed findings, severity drift, naming bias,
+                weak evidence, and whether fixes restore the invariant or only patch one symptom.
+              </p>
+              <ul>
+                <li><strong>Uses:</strong> benchmark evaluation, PR review quality, skill testing, reviewer calibration.</li>
+                <li><strong>Output:</strong> missed bugs, severity differences, skipped surfaces, evidence quality, fix quality.</li>
+                <li><strong>Signal:</strong> catches reviews that look complete but ignore dangerous capability paths.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="methods" class="section methods-section" aria-labelledby="methods-title">
+        <div class="section-heading">
+          <p class="eyebrow">Algorithms, cases, tests</p>
+          <h2 id="methods-title">How Secure decides what matters.</h2>
+          <p>
+            Secure combines fast repository mapping with source-confirmed review. The scanner can produce leads quickly,
+            but the review only reports a finding after the relevant guard, input, object scope, and sink are checked.
+          </p>
+        </div>
+
+        <div class="method-board" aria-label="Secure method details">
+          <article class="method-column">
+            <span class="method-index">A1</span>
+            <h3>Review algorithms</h3>
+            <ul>
+              <li><strong>Route and action graph:</strong> collects handlers, server actions, controllers, jobs, webhooks, and public forms.</li>
+              <li><strong>Capability clustering:</strong> groups code by auth, tenant scope, uploads, storage, billing, AI, exports, and admin operations.</li>
+              <li><strong>Risk ranking:</strong> scores unauthenticated reachability, state mutation, sensitive sinks, external cost, and missing ownership checks.</li>
+              <li><strong>Flow tracing:</strong> follows user-controlled input into database writes, file keys, signed URLs, queues, emails, logs, and provider calls.</li>
+              <li><strong>Semantic confirmation:</strong> treats names like public, demo, preview, helper, lead, and asset as untrusted until source proves the invariant.</li>
+            </ul>
+          </article>
+
+          <article class="method-column">
+            <span class="method-index">C1</span>
+            <h3>Cases covered</h3>
+            <ul>
+              <li><strong>Auth bypass:</strong> demo headers, trusted client identity, optional sessions, weak middleware order.</li>
+              <li><strong>IDOR and tenant leaks:</strong> direct object reads, updates, deletes, exports, jobs, and signed URL access without owner scope.</li>
+              <li><strong>Mass assignment:</strong> role, plan, status, tenantId, ownerId, price, quota, and policy fields accepted from payloads.</li>
+              <li><strong>Public abuse:</strong> contact forms, lead capture, quote builders, AI calls, PDF rendering, email, queues, and webhooks.</li>
+              <li><strong>Production leaks:</strong> real secrets, unsafe examples, verbose errors, sensitive logs, fail-open Redis, CORS, and CSRF gaps.</li>
+            </ul>
+          </article>
+
+          <article class="method-column">
+            <span class="method-index">T1</span>
+            <h3>Proof and tests</h3>
+            <ul>
+              <li><strong>Evidence first:</strong> every finding points to file evidence and explains the exact input, guard, sink, and impact.</li>
+              <li><strong>Focused tests:</strong> add or run tests for rejected cross-tenant access, blocked role changes, rate limits, webhook signatures, and upload constraints.</li>
+              <li><strong>Static checks:</strong> run typecheck, lint, build, dependency audit, secret scan, and targeted searches for dangerous patterns.</li>
+              <li><strong>Rescan loop:</strong> rerun the scraper after fixes to confirm removed leads and detect new risks introduced by patches.</li>
+              <li><strong>Coverage report:</strong> state fixed findings, remaining findings, untested areas, blockers, and scoped fix coverage.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="method-link-row">
+          <a class="button secondary" href="/cases/">View all 21 review cases</a>
+        </div>
+      </section>
+
+      <section id="coverage" class="section coverage-section" aria-labelledby="coverage-title">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Security surface</p>
+          <h2 id="coverage-title">Designed around real failure modes.</h2>
+          <p>
+            The skill looks for capability, not names. A route called preview, helper, public, lead,
+            quote, template, or asset can still mutate state, expose files, or spend resources.
+          </p>
+        </div>
+        <div class="capability-grid">
+          <article>
+            <h3>Auth and role trust</h3>
+            <p>Detects demo headers, client-provided identity, weak session boundaries, and role confusion.</p>
+          </article>
+          <article>
+            <h3>Tenant and owner scope</h3>
+            <p>Checks direct object reads, updates, deletes, exports, jobs, and signed URLs for cross-tenant leakage.</p>
+          </article>
+          <article>
+            <h3>Mass assignment</h3>
+            <p>Finds policy fields flowing from payloads into models, DTOs, ORMs, mappers, and update calls.</p>
+          </article>
+          <article>
+            <h3>Storage boundaries</h3>
+            <p>Reviews uploads, object keys, public files, private buckets, signed URLs, previews, and delete paths.</p>
+          </article>
+          <article>
+            <h3>Public abuse paths</h3>
+            <p>Prioritizes forms, webhooks, AI calls, PDF rendering, email, queues, quotas, and missing rate limits.</p>
+          </article>
+          <article>
+            <h3>Release readiness</h3>
+            <p>Flags secrets, fail-open defaults, noisy logs, provider errors, CORS, CSRF, and verification blockers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="languages" class="section language-section" aria-labelledby="languages-title">
+        <div class="language-copy">
+          <p class="eyebrow">Multi-language by invariant</p>
+          <h2 id="languages-title">One review model, many stacks.</h2>
+          <p>
+            Controllers, handlers, views, routes, middleware, filters, guards, policies, voters,
+            decorators, and permission classes all answer the same question: does the guard dominate the sink?
+          </p>
+        </div>
+        <ul class="language-grid" aria-label="Supported languages and stacks">
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>Kotlin</li>
+          <li>.NET</li>
+          <li>C#</li>
+          <li>Go</li>
+          <li>Ruby</li>
+          <li>PHP</li>
+          <li>Rust</li>
+          <li>SQL</li>
+        </ul>
+      </section>
+
+      <section id="ship" class="section ship-section" aria-labelledby="ship-title">
+        <div class="ship-panel">
+          <p class="eyebrow">Secure mode</p>
+          <h2 id="ship-title">A practical target: fix confirmed Critical and High findings.</h2>
+          <p>
+            The skill never claims a project is 100 percent secure. It reports what matters:
+            confirmed findings, fixed findings, verification results, blockers, and remaining risk.
+          </p>
+          <pre aria-label="Secure command example"><code>$secure C:\path\to\project</code></pre>
+        </div>
+        <div class="coverage-meter" aria-label="Example fix coverage">
+          <span>Fix coverage</span>
+          <strong>8/8 Critical and High</strong>
+          <p>Example report after scan, confirm, patch, verify, and rescan.</p>
+        </div>
+      </section>
+
+      <section id="install" class="section install-section" aria-labelledby="install-title">
+        <div class="install-copy">
+          <p class="eyebrow">Ready to use</p>
+          <h2 id="install-title">Drop it into Codex skills.</h2>
+          <p>
+            The skill ships as a self-contained folder with instructions, references, local scanners,
+            and UI metadata. It is built for large projects without dumping the whole repo into context.
+          </p>
+        </div>
+        <div class="install-steps" aria-label="Install and prompt examples">
+          <article>
+            <span>01</span>
+            <h3>Install</h3>
+            <pre><code>C:\Users\danie\.codex\skills\secure</code></pre>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Review prompt</h3>
+            <pre><code>Use secure. Review this project before commit, focused on production and security issues:
+C:\path\to\project</code></pre>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Hardening prompt</h3>
+            <pre><code>Use secure. Make this project production ready. Fix confirmed Critical and High findings, verify, rescan, and report fix coverage:
+C:\path\to\project</code></pre>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Secure. Whole-project production security review, hardening, verification, and case coverage reporting.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>

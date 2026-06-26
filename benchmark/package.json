@@ -1,0 +1,14 @@
+{
+  "name": "secure-fixture-21",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Intentionally vulnerable benchmark fixture for the Secure review skill.",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
