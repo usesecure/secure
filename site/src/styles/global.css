@@ -130,7 +130,7 @@ pre,
   inset: 0;
   background:
     linear-gradient(90deg, var(--paper) 0%, oklch(96% 0.018 76 / 76%) 36%, oklch(96% 0.018 76 / 20%) 72%),
-    url("/assets/review-pack.svg") right 44% center / min(900px, 70vw) auto no-repeat;
+    url("/secure/assets/review-pack.svg") right 44% center / min(900px, 70vw) auto no-repeat;
 }
 
 .hero-copy {
@@ -939,7 +939,7 @@ pre {
     opacity: 0.45;
     background:
       linear-gradient(180deg, var(--paper) 0%, oklch(96% 0.018 76 / 72%) 62%, oklch(96% 0.018 76 / 10%) 100%),
-      url("/assets/review-pack.svg") center bottom 42px / 760px auto no-repeat;
+      url("/secure/assets/review-pack.svg") center bottom 42px / 760px auto no-repeat;
   }
 
   h1 {

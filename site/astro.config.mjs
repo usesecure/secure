@@ -2,7 +2,8 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://secure.example",
+  site: "https://danielcadev.github.io",
+  base: "/secure",
   integrations: [sitemap()],
   build: {
     format: "directory"
