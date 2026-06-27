@@ -21,3 +21,10 @@ node src/server.mjs
 
 The answer key lives outside this project at `../secure-fixture-21-answer-key.json`.
 Keep it outside the reviewed scope so the scanner cannot read the expected findings.
+
+## Baseline Comparison
+
+Use [BASELINE-COMPARISON.md](BASELINE-COMPARISON.md) to compare a normal model
+review against the `secure` workflow. The clean comparison uses a neutral copy of
+this fixture, removes benchmark hints, runs one review with `Do not use the secure
+skill`, then runs the same prompt without that restriction.

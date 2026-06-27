@@ -130,7 +130,7 @@ pre,
   inset: 0;
   background:
     linear-gradient(90deg, var(--paper) 0%, oklch(96% 0.018 76 / 76%) 36%, oklch(96% 0.018 76 / 20%) 72%),
-    url("/secure/assets/review-pack.svg") right 44% center / min(900px, 70vw) auto no-repeat;
+    url("../assets/review-pack.svg") right 44% center / min(900px, 70vw) auto no-repeat;
 }
 
 .hero-copy {
@@ -313,6 +313,122 @@ h1 {
   color: oklch(90% 0.08 120);
   font-size: clamp(0.68rem, 1.1vw, 0.84rem);
   line-height: 1.55;
+}
+
+.baseline-section {
+  background:
+    linear-gradient(90deg, oklch(18% 0.035 80 / 8%) 1px, transparent 1px),
+    linear-gradient(0deg, oklch(18% 0.035 80 / 8%) 1px, transparent 1px),
+    var(--paper-deep);
+  background-size: 24px 24px;
+}
+
+.baseline-intro {
+  max-width: var(--max);
+  margin: 0 auto clamp(28px, 5vw, 58px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.8fr);
+  gap: clamp(24px, 6vw, 82px);
+  align-items: end;
+}
+
+.baseline-intro h2 {
+  max-width: 13ch;
+  margin-bottom: 0;
+}
+
+.baseline-intro p:not(.eyebrow) {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-size: clamp(1.04rem, 1.6vw, 1.24rem);
+  line-height: 1.6;
+}
+
+.comparison-board {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(210px, 0.72fr) minmax(210px, 0.72fr) minmax(0, 1.15fr);
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 10px 10px 0 var(--ink);
+}
+
+.comparison-score {
+  min-height: 330px;
+  padding: clamp(22px, 4vw, 34px);
+  border-right: 1px solid var(--ink);
+}
+
+.baseline-score {
+  background: oklch(94% 0.044 52);
+}
+
+.secure-score {
+  background: var(--acid);
+}
+
+.comparison-score span,
+.comparison-notes h3,
+.comparison-prompt h3,
+.case-comparison span {
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.comparison-score strong {
+  display: block;
+  margin: clamp(52px, 8vw, 92px) 0 18px;
+  font-size: clamp(3.4rem, 8vw, 6.8rem);
+  line-height: 0.82;
+}
+
+.comparison-score p,
+.comparison-notes li,
+.case-comparison p {
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.comparison-notes {
+  grid-row: span 2;
+  padding: clamp(22px, 4vw, 34px);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.comparison-notes h3,
+.comparison-prompt h3 {
+  margin: 0 0 18px;
+  color: var(--orange);
+  letter-spacing: 0;
+}
+
+.comparison-notes ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.comparison-notes li {
+  padding-top: 14px;
+  border-top: 1px solid oklch(88% 0.04 80 / 34%);
+  color: oklch(86% 0.026 76);
+}
+
+.comparison-prompt {
+  grid-column: 1 / span 2;
+  padding: clamp(22px, 4vw, 34px);
+  border-top: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.comparison-prompt pre {
+  margin: 0;
 }
 
 .section {
@@ -648,6 +764,41 @@ h2 {
   line-height: 1.5;
 }
 
+.case-comparison {
+  max-width: var(--max);
+  margin: 0 auto 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 7px 7px 0 oklch(18% 0.035 80 / 18%);
+}
+
+.case-comparison div {
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.case-comparison div:first-child {
+  border-right: 1px solid var(--ink);
+  background: oklch(94% 0.044 52);
+}
+
+.case-comparison div:last-child {
+  background: var(--acid);
+}
+
+.case-comparison strong {
+  display: block;
+  margin: 20px 0 12px;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.case-comparison p {
+  margin: 0;
+}
+
 .case-row {
   max-width: var(--max);
   margin: 0 auto 14px;
@@ -939,7 +1090,7 @@ pre {
     opacity: 0.45;
     background:
       linear-gradient(180deg, var(--paper) 0%, oklch(96% 0.018 76 / 72%) 62%, oklch(96% 0.018 76 / 10%) 100%),
-      url("/secure/assets/review-pack.svg") center bottom 42px / 760px auto no-repeat;
+      url("../assets/review-pack.svg") center bottom 42px / 760px auto no-repeat;
   }
 
   h1 {
@@ -949,6 +1100,8 @@ pre {
   .command-strip,
   .benchmark-section,
   .benchmark-board,
+  .baseline-intro,
+  .comparison-board,
   .workflow-list,
   .capability-grid,
   .flow-stack summary,
@@ -956,6 +1109,7 @@ pre {
   .method-board,
   .cases-hero,
   .case-summary,
+  .case-comparison,
   .case-row,
   .case-copy dl,
   .language-section,
@@ -967,6 +1121,20 @@ pre {
   .benchmark-score {
     border-right: 0;
     border-bottom: 1px solid oklch(88% 0.04 80);
+  }
+
+  .comparison-score {
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .comparison-notes {
+    grid-row: auto;
+  }
+
+  .comparison-prompt {
+    grid-column: auto;
   }
 
   .flow-action {
@@ -992,6 +1160,11 @@ pre {
 
   .case-number {
     place-items: center start;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .case-comparison div:first-child {
     border-right: 0;
     border-bottom: 1px solid var(--ink);
   }

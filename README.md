@@ -112,6 +112,18 @@ npm install
 npm run build
 ```
 
+Vercel:
+
+```bash
+vercel
+```
+
+This repository includes `vercel.json`, so Vercel can deploy from the repository
+root while building the Astro site in `site/` and publishing `site/dist`. On
+GitHub Pages the site is built under `/secure`; on Vercel it is built at `/`.
+Set `PUBLIC_SITE_URL` in Vercel if you want canonical URLs to use a custom
+domain.
+
 Skill validation, from this repository root:
 
 ```bash

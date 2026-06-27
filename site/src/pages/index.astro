@@ -4,9 +4,14 @@ import "../styles/global.css";
 const pageTitle = "Secure | Production security review and hardening skill";
 const description =
   "Secure is a Codex skill for whole-project production security reviews, compact repo scraping, semantic risk confirmation, autonomous hardening, verification, and benchmark-grade coverage reporting.";
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const siteUrl = import.meta.env.SITE.endsWith("/")
+  ? import.meta.env.SITE.slice(0, -1)
+  : import.meta.env.SITE;
 const casesUrl = `${base}cases/`;
-const canonicalUrl = "https://danielcadev.github.io/secure/";
+const canonicalUrl = `${siteUrl}${base}`;
 const ogImage = `${base}assets/og-image.svg`;
 const reviewPackImage = `${base}assets/review-pack.svg`;
 const jsonLd = {
@@ -73,6 +78,7 @@ const jsonLd = {
         <a href="#workflow">Workflow</a>
         <a href="#flows">Flows</a>
         <a href="#benchmark">Benchmark</a>
+        <a href="#baseline">Baseline</a>
         <a href="#methods">Methods</a>
         <a href={casesUrl}>Cases</a>
         <a href="#coverage">Coverage</a>
@@ -138,6 +144,47 @@ Reviewed scoped routes, auth, tenant scope, storage, AI/PDF, payments, webhooks,
 Case Coverage
 Summary: 21/21 Detected, 0 Partial, 0 Missed, 0 Out of scope.
 - Partial/Missed/Out of scope: None</code></pre>
+        </div>
+      </section>
+
+      <section id="baseline" class="section baseline-section" aria-labelledby="baseline-title">
+        <div class="baseline-intro">
+          <p class="eyebrow">Blind comparison</p>
+          <h2 id="baseline-title">Model-only reviews catch the loud bugs. Secure closes the map.</h2>
+          <p>
+            The fixture was copied into a neutral project named Admin Studio, with tests, answer keys,
+            benchmark wording, and `secure` hints removed. Then the same normal pre-commit prompt was run twice:
+            once with the skill forbidden, once with skill selection allowed.
+          </p>
+        </div>
+
+        <div class="comparison-board" aria-label="Baseline versus Secure benchmark comparison">
+          <div class="comparison-score baseline-score">
+            <span>Without secure</span>
+            <strong>12/21</strong>
+            <p>Detected. 5 partial, 4 missed, 0 out of scope.</p>
+          </div>
+          <div class="comparison-score secure-score">
+            <span>With secure</span>
+            <strong>21/21</strong>
+            <p>Detected. 0 partial, 0 missed, 0 out of scope.</p>
+          </div>
+          <div class="comparison-notes">
+            <h3>What the baseline missed</h3>
+            <ul>
+              <li>Mass assignment into policy fields.</li>
+              <li>Upload and storage trust boundaries.</li>
+              <li>CORS, CSRF, rate limits, malformed input, and fail-open behavior.</li>
+              <li>AI/PDF cost paths, preview side effects, and checkout amount tampering.</li>
+            </ul>
+          </div>
+          <div class="comparison-prompt">
+            <h3>Natural test prompt</h3>
+            <pre><code>ChatGPT, review this project before commit. Focus on production and security issues.
+
+Project:
+C:\Users\danie\Escritorio\Proyectos\presentacion\review-target</code></pre>
+          </div>
         </div>
       </section>
 
