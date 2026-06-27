@@ -7,18 +7,24 @@
   "scripts": {
     "test": "npm --prefix benchmark test",
     "build:site": "npm --prefix site run build",
-    "check:scripts": "python -m py_compile skill/scripts/project_scraper.py skill/scripts/inventory_scan.py",
+    "check:scripts": "python -m py_compile skills/secure/scripts/project_scraper.py skills/secure/scripts/inventory_scan.py",
     "check": "npm run check:scripts && npm test && npm run build:site"
   },
   "keywords": [
     "codex",
     "security",
+    "security-review",
+    "code-review",
+    "vulnerability-review",
+    "production-security",
     "secure-code-review",
     "appsec",
     "security-audit",
     "ai-security",
     "static-analysis",
-    "secure-by-design"
+    "secure-by-design",
+    "agent-skills",
+    "skills-sh"
   ],
   "license": "MIT"
 }

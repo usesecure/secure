@@ -1,4 +1,4 @@
 interface:
   display_name: "Secure"
-  short_description: "Review, harden, verify production security"
+  short_description: "Security review and hardening for production code"
   default_prompt: "Use $secure to scan this whole project, fix confirmed production/security issues, verify, rescan, and report fix coverage."

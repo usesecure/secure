@@ -2,6 +2,8 @@
 
 Production security review and hardening for Codex.
 
+[![skills.sh](https://skills.sh/b/danielcadev/secure)](https://skills.sh/danielcadev/secure)
+
 Secure is a Codex skill that reviews whole projects by capability, data flow, and broken invariants instead of filename assumptions. It scans large repositories compactly, confirms real risks from source, fixes confirmed issues when asked, verifies the result, and reports coverage without claiming a project is magically "100% secure".
 
 ## Why this exists
@@ -21,10 +23,19 @@ Secure is built to catch those misses.
 ## What is included
 
 ```text
-skill/      The Codex skill: SKILL.md, references, scanners, UI metadata
-site/       Astro marketing site and case library
-benchmark/ 21-case intentionally vulnerable fixture used to test the review behavior
+skills/secure/ The Codex skill: SKILL.md, references, scanners, UI metadata
+site/          Astro marketing site and case library
+benchmark/    21-case intentionally vulnerable fixture used to test the review behavior
 ```
+
+The skill uses the standard Skills CLI discovery layout:
+
+```text
+skills/secure/SKILL.md
+```
+
+That layout is intentional. It helps `npx skills add danielcadev/secure`
+discover the package cleanly and gives Skills.sh the clearest index path.
 
 ## Core workflows
 
@@ -121,7 +132,7 @@ npx skills add danielcadev/secure
 Copy the skill folder into your Codex skills directory:
 
 ```powershell
-Copy-Item -Recurse .\skill "$env:USERPROFILE\.codex\skills\secure"
+Copy-Item -Recurse .\skills\secure "$env:USERPROFILE\.codex\skills\secure"
 ```
 
 Then start a new Codex chat and use:
@@ -170,8 +181,8 @@ domain.
 Skill validation, from this repository root:
 
 ```bash
-python /path/to/quick_validate.py skill
-python -m py_compile skill/scripts/project_scraper.py skill/scripts/inventory_scan.py
+python /path/to/quick_validate.py skills/secure
+python -m py_compile skills/secure/scripts/project_scraper.py skills/secure/scripts/inventory_scan.py
 ```
 
 ## What Secure optimizes for

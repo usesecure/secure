@@ -29,7 +29,7 @@ jobs:
         working-directory: site
 
       - name: Check Python scripts
-        run: python -m py_compile skill/scripts/project_scraper.py skill/scripts/inventory_scan.py
+        run: python -m py_compile skills/secure/scripts/project_scraper.py skills/secure/scripts/inventory_scan.py
 
       - name: Run benchmark tests
         run: npm test
