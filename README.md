@@ -2,7 +2,7 @@
 
 Production security review and hardening for Codex.
 
-Secure is a Codex skill that reviews whole projects by capability, data flow, and broken invariants instead of filename vibes. It scans large repositories compactly, confirms real risks from source, fixes confirmed issues when asked, verifies the result, and reports coverage without claiming a project is magically "100% secure".
+Secure is a Codex skill that reviews whole projects by capability, data flow, and broken invariants instead of filename assumptions. It scans large repositories compactly, confirms real risks from source, fixes confirmed issues when asked, verifies the result, and reports coverage without claiming a project is magically "100% secure".
 
 ## Why this exists
 
@@ -74,6 +74,12 @@ Summary: 21/21 Detected, 0 Partial, 0 Missed, 0 Out of scope.
 ```
 
 ## Install locally
+
+Install from the Skills CLI:
+
+```bash
+npx skills add danielcadev/secure
+```
 
 Copy the skill folder into your Codex skills directory:
 
