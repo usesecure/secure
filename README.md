@@ -39,6 +39,43 @@ Secure routes natural language to concrete workflows:
 
 Users do not need to know these commands. Requests like "review this project before commit" and "make it production ready" are enough.
 
+## Commands
+
+All commands are accessed through the single `secure` skill. Use natural language,
+or call a command directly when you want a specific workflow.
+
+| Command | What it does |
+| --- | --- |
+| `review [path or diff]` | Read-only production/security review. Findings first, with evidence, impact, fixes, verification limits, and residual risk. |
+| `audit [path]` | Broader production-readiness pass across routes, auth, config, secrets, CORS/CSRF, logs, rate limits, storage, webhooks, payments, and fail-open behavior. |
+| `scrape [path]` | Token-efficient local project scan. Produces a compact review pack with risky files, routes, possible secrets, capability clusters, and inspection plan. |
+| `inventory [path]` | Sensitive capability inventory only: entry points, trusted inputs, sinks, expected guards, and recommended review order. |
+| `harden [target]` | Implement fixes for confirmed findings, preserve the broken invariant in code, and verify with focused checks. |
+| `harden-all [path]` | Full scan, confirm, fix, verify, rescan, and iterate until confirmed Critical/High issues are fixed or blocked. |
+| `secure [path]` | Alias for `harden-all`. Use when the goal is "make this production ready" or "fix the security issues". |
+| `threat-model [feature]` | Map actors, assets, trust boundaries, user-controlled inputs, sensitive sinks, abuse cases, and required controls before coding. |
+| `compare [reviews]` | Compare review outputs for missed findings, severity drift, naming bias, weak evidence, skipped surfaces, and fix quality. |
+
+Usage examples:
+
+```text
+Use secure. Review this project before commit:
+C:\path\to\project
+
+Use secure. Audit this app before production:
+C:\path\to\project
+
+Use secure. Scrape this monorepo and give me the risky surfaces:
+C:\path\to\repo
+
+Use secure. Harden all confirmed Critical and High findings:
+C:\path\to\project
+
+Use secure. Threat-model the upload and signed URL flow.
+
+Use secure. Compare these two security reviews and tell me what was missed.
+```
+
 ## Benchmark result
 
 The included fixture covers 21 review invariants:

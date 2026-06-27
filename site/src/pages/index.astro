@@ -77,6 +77,7 @@ const jsonLd = {
       <nav class="nav-links" aria-label="Site sections">
         <a href="#workflow">Workflow</a>
         <a href="#flows">Flows</a>
+        <a href="#commands">Commands</a>
         <a href="#benchmark">Benchmark</a>
         <a href="#baseline">Baseline</a>
         <a href="#methods">Methods</a>
@@ -113,6 +114,78 @@ const jsonLd = {
           Built for normal human requests. Users can say "review this project" or
           "make it production ready"; Secure maps that to the right workflow.
         </p>
+      </section>
+
+      <section id="commands" class="section commands-section" aria-labelledby="commands-title">
+        <div class="commands-intro">
+          <p class="eyebrow">Command surface</p>
+          <h2 id="commands-title">One skill. Nine production-security workflows.</h2>
+          <p>
+            Secure works from normal requests, but the command vocabulary gives teams a precise way
+            to ask for review, audit, scraping, hardening, threat modeling, and reviewer calibration.
+          </p>
+        </div>
+
+        <div class="command-board" aria-label="Secure command list">
+          <article>
+            <code>review</code>
+            <h3>Pre-commit security review</h3>
+            <p>Read-only findings with evidence, impact, fixes, verification limits, and residual risk.</p>
+          </article>
+          <article>
+            <code>audit</code>
+            <h3>Production readiness</h3>
+            <p>Broader pass across routes, auth, config, secrets, logs, CORS, CSRF, rate limits, storage, webhooks, and fail-open behavior.</p>
+          </article>
+          <article>
+            <code>scrape</code>
+            <h3>Low-token repo map</h3>
+            <p>Local scanner emits risky files, entry points, possible secrets, capability clusters, and inspection order.</p>
+          </article>
+          <article>
+            <code>inventory</code>
+            <h3>Capability index</h3>
+            <p>Lists sensitive surfaces, user-controlled inputs, sinks, expected guards, and review priorities.</p>
+          </article>
+          <article>
+            <code>harden</code>
+            <h3>Focused remediation</h3>
+            <p>Fixes confirmed findings by restoring the broken invariant, then runs focused verification.</p>
+          </article>
+          <article>
+            <code>harden-all</code>
+            <h3>Full fix loop</h3>
+            <p>Scan, confirm, patch, verify, rescan, and iterate until confirmed Critical and High issues are fixed or blocked.</p>
+          </article>
+          <article>
+            <code>secure</code>
+            <h3>Ship-ready alias</h3>
+            <p>Natural hardening mode for requests like "make this production ready" or "fix the security issues".</p>
+          </article>
+          <article>
+            <code>threat-model</code>
+            <h3>Design-time security</h3>
+            <p>Maps actors, assets, trust boundaries, inputs, sinks, abuse cases, and required controls before coding.</p>
+          </article>
+          <article>
+            <code>compare</code>
+            <h3>Review calibration</h3>
+            <p>Checks missed findings, severity drift, naming bias, weak evidence, skipped surfaces, and fix quality.</p>
+          </article>
+        </div>
+
+        <div class="command-examples" aria-label="Secure usage examples">
+          <div>
+            <span>Direct command</span>
+            <pre><code>Use secure. Audit this app before production:
+C:\path\to\project</code></pre>
+          </div>
+          <div>
+            <span>Natural language</span>
+            <pre><code>ChatGPT, review this project before commit.
+Focus on production and security issues.</code></pre>
+          </div>
+        </div>
       </section>
 
       <section id="benchmark" class="section benchmark-section" aria-labelledby="benchmark-title">
@@ -489,7 +562,7 @@ C:\Users\danie\Escritorio\Proyectos\presentacion\review-target</code></pre>
           <article>
             <span>01</span>
             <h3>Install</h3>
-            <pre><code>C:\Users\danie\.codex\skills\secure</code></pre>
+            <pre><code>npx skills add danielcadev/secure</code></pre>
           </article>
           <article>
             <span>02</span>
