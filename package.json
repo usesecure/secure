@@ -2,7 +2,7 @@
   "name": "secure-skill",
   "version": "0.1.0",
   "private": false,
-  "description": "Production security review and hardening skill for Codex.",
+  "description": "Production security review and hardening skill for Codex, AI-generated codebases, and vibe-coded apps.",
   "type": "module",
   "scripts": {
     "test": "npm --prefix benchmark test",
@@ -21,6 +21,8 @@
     "appsec",
     "security-audit",
     "ai-security",
+    "vibe-coding",
+    "ai-generated-code",
     "static-analysis",
     "secure-by-design",
     "agent-skills",

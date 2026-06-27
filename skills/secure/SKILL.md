@@ -1,6 +1,6 @@
 ---
 name: secure
-description: Security review skill for AI coding agents. Use for secure code review, production security audit, vulnerability review, appsec hardening, pre-commit security review, authentication, authorization, secrets, CORS, CSRF, webhooks, payments, uploads, signed URLs, multi-tenant security, AI/PDF processing, and whole-project security remediation across JavaScript/TypeScript, Python, Java/Kotlin, .NET/C#, Go, Ruby, PHP, Rust, SQL/ORM-heavy services, mobile backends, monorepos, APIs, server actions, backend services, admin/CRM tools, and security-review benchmarks. Includes token-efficient project scraping, capability inventory, fix/verify/rescan workflows, and benchmark-grade coverage reporting.
+description: Security review skill for AI coding agents, AI-generated codebases, and vibe-coded applications. Use for secure code review, production security audit, vulnerability review, appsec hardening, pre-commit security review, authentication, authorization, secrets, CORS, CSRF, webhooks, payments, uploads, signed URLs, multi-tenant security, AI/PDF processing, and whole-project security remediation across JavaScript/TypeScript, Python, Java/Kotlin, .NET/C#, Go, Ruby, PHP, Rust, SQL/ORM-heavy services, mobile backends, monorepos, APIs, server actions, backend services, admin/CRM tools, and security-review benchmarks. Includes token-efficient project scraping, capability inventory, fix/verify/rescan workflows, and benchmark-grade coverage reporting.
 ---
 
 # Secure

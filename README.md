@@ -1,10 +1,10 @@
 # Secure
 
-Production security review and hardening for Codex.
+Production security review and hardening for Codex, AI-generated codebases, and vibe-coded applications.
 
 [![skills.sh](https://skills.sh/b/danielcadev/secure)](https://skills.sh/danielcadev/secure)
 
-Secure is a Codex skill that reviews whole projects by capability, data flow, and broken invariants instead of filename assumptions. It scans large repositories compactly, confirms real risks from source, fixes confirmed issues when asked, verifies the result, and reports coverage without claiming a project is magically "100% secure".
+Secure is a Codex skill that reviews whole projects by capability, data flow, and broken invariants instead of filename assumptions. It is built for modern app teams shipping AI-assisted and vibe-coded applications where generated code, fast iteration, and hidden production paths can create real security risk. It scans large repositories compactly, confirms real risks from source, fixes confirmed issues when asked, verifies the result, and reports coverage without claiming a project is magically "100% secure".
 
 ## Why this exists
 
