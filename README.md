@@ -23,15 +23,21 @@ Secure is built to catch those misses.
 ## What is included
 
 ```text
-skills/secure/ The Codex skill: SKILL.md, references, scanners, UI metadata
-site/          Astro marketing site and case library
-benchmark/    21-case intentionally vulnerable fixture used to test the review behavior
+skills/secure/             The primary Codex skill: SKILL.md, references, scanners, UI metadata
+skills/security-review/    Search alias for pre-commit and production security reviews
+skills/vibe-security/      Search alias for vibe-coded and AI-generated apps
+skills/secure-code-review/ Search alias for secure code review queries
+site/                      Astro marketing site and case library
+benchmark/                 21-case intentionally vulnerable fixture used to test the review behavior
 ```
 
 The skill uses the standard Skills CLI discovery layout:
 
 ```text
 skills/secure/SKILL.md
+skills/security-review/SKILL.md
+skills/vibe-security/SKILL.md
+skills/secure-code-review/SKILL.md
 ```
 
 That layout is intentional. It helps `npx skills add usesecure/secure`
@@ -52,8 +58,11 @@ Users do not need to know these commands. Requests like "review this project bef
 
 ## Commands
 
-All commands are accessed through the single `secure` skill. Use natural language,
-or call a command directly when you want a specific workflow.
+The primary skill is `secure`. The repository also ships `security-review`,
+`vibe-security`, and `secure-code-review` aliases so people can find the same
+review behavior through common Skills.sh searches.
+
+Use natural language, or call a command directly when you want a specific workflow.
 
 | Command | What it does |
 | --- | --- |
@@ -127,6 +136,11 @@ Install from the Skills CLI:
 
 ```bash
 npx skills add usesecure/secure
+
+# Exact search aliases also work:
+npx skills add usesecure/secure --skill security-review
+npx skills add usesecure/secure --skill vibe-security
+npx skills add usesecure/secure --skill secure-code-review
 ```
 
 Copy the skill folder into your Codex skills directory:

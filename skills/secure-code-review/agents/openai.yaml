@@ -1,0 +1,4 @@
+interface:
+  display_name: "Secure Code Review"
+  short_description: "Secure code review for production apps across major stacks"
+  default_prompt: "Use $secure-code-review to review this project before commit, focused on production and security issues."

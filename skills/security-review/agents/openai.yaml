@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Review"
+  short_description: "Production security review for AI-generated and vibe-coded apps"
+  default_prompt: "Use $security-review to review this project before commit, focused on production and security issues."

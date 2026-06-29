@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vibe Security"
+  short_description: "Security review for vibe-coded and AI-generated apps before launch"
+  default_prompt: "Use $vibe-security to review this vibe-coded app before launch, focused on production and security issues."
